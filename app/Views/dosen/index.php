@@ -11,8 +11,11 @@
 <body class="bg-light">
 
     <nav class="navbar navbar-dark bg-primary mb-4">
-        <div class="container">
+        <div class="container d-flex justify-content-between align-items-center">
             <span class="navbar-brand mb-0 h1">Sistem Informasi Akademik</span>
+            <div>
+                <a href="/wildan-si-akademik/public/logout" class="btn btn-sm btn-outline-light">Logout</a>
+            </div>
         </div>
     </nav>
 
@@ -28,6 +31,7 @@
                             <tr>
                                 <th>NIDN</th>
                                 <th>Nama</th>
+                                <th>Prodi</th>
                                 <th class="text-center">Aksi</th>
                             </tr>
                         </thead>
@@ -36,6 +40,7 @@
                                 <tr>
                                     <td><?= htmlspecialchars($d['nidn']); ?></td>
                                     <td><?= htmlspecialchars($d['nama']); ?></td>
+                                    <td><?= htmlspecialchars($d['prodi']); ?></td>
                                     <td class="text-center">
                                         <a href="?url=dosen/detail&nidn=<?= urlencode($d['nidn']); ?>"
                                            class="btn btn-sm btn-outline-primary">Detail</a>
@@ -46,6 +51,7 @@
                     </table>
                 </div>
 
+                <a href="/wildan-si-akademik/public/dashboard" class="btn btn-outline-secondary mt-3">← Dashboard</a>
                 <a href="?url=mahasiswa" class="btn btn-secondary mt-3">Lihat Data Mahasiswa</a>
             </div>
         </div>

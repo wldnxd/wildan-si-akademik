@@ -11,8 +11,11 @@
 <body class="bg-light">
 
     <nav class="navbar navbar-dark bg-primary mb-4">
-        <div class="container">
+        <div class="container d-flex justify-content-between align-items-center">
             <span class="navbar-brand mb-0 h1">Sistem Informasi Akademik</span>
+            <div>
+                <a href="/wildan-si-akademik/public/logout" class="btn btn-sm btn-outline-light">Logout</a>
+            </div>
         </div>
     </nav>
 
@@ -41,6 +44,7 @@
                 <?php endif; ?>
 
                 <a href="?url=mahasiswa" class="btn btn-secondary">&larr; Kembali</a>
+                <a href="/wildan-si-akademik/public/dashboard" class="btn btn-outline-secondary">Dashboard</a>
             </div>
         </div>
     </div>

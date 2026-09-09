@@ -4,20 +4,16 @@ class Dosen
 {
     public function getAll()
     {
-        return[
-            ['nidn' => '001',
-            'nama' => 'Bapak Ahmad'],
-
-            ['nidn' => '002',
-            'nama' => 'Ibu Siti'],
+        return [
+            ['nidn' => '001', 'nama' => 'Ahmad', 'prodi' => 'Teknik Informatika'],
+            ['nidn' => '002', 'nama' => 'Siti',  'prodi' => 'Sistem Informasi'],
+            ['nidn' => '003', 'nama' => 'Budi',  'prodi' => 'Teknik Informatika'],
         ];
     }
 
     public function getByNidn($nidn)
     {
-        $dosen = $this->getAll();
-
-        foreach ($dosen as $d) {
+        foreach ($this->getAll() as $d) {
             if ($d['nidn'] == $nidn) {
                 return $d;
             }
