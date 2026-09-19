@@ -1,22 +1,22 @@
 <?php
-
 class Dosen
 {
-    public function getAll()
-    {
-        return [
-            ['nidn' => '001', 'nama' => 'Ahmad', 'prodi' => 'Teknik Informatika'],
-            ['nidn' => '002', 'nama' => 'Siti',  'prodi' => 'Sistem Informasi'],
-            ['nidn' => '003', 'nama' => 'Budi',  'prodi' => 'Teknik Informatika'],
-        ];
-    }
-
-    public function getByNidn($nidn)
-    {
-        foreach ($this->getAll() as $d) {
-            if ($d['nidn'] == $nidn) {
-                return $d;
-            }
-        }
-    }
+ private $pdo;
+ public function __construct($pdo)
+ {
+ $this->pdo = $pdo;
+ }
+ public function getAll()
+ {
+ $stmt = $this->pdo->query(
+ "SELECT * FROM dosen ORDER BY nama ASC"
+ );
+ return $stmt->fetchAll(PDO::FETCH_ASSOC);
+ }
+ public function getByNidn($nidn)
+ {
+ $stmt = $this->pdo->prepare("SELECT * FROM dosen WHERE nidn = :nidn LIMIT 1");
+ $stmt->execute(['nidn' => $nidn]);
+ return $stmt->fetch(PDO::FETCH_ASSOC);
+ }
 }

@@ -34,6 +34,10 @@
                             <th>Nama</th>
                             <td>: <?= htmlspecialchars($dosen['nama']); ?></td>
                         </tr>
+                        <tr>
+                            <th>Bidang Keahlian</th>
+                            <td>: <?= htmlspecialchars($dosen['bidang_keahlian']); ?></td>
+                        </tr>
                     </table>
                 <?php else: ?>
                     <div class="alert alert-warning">Data dosen tidak ditemukan.</div>
