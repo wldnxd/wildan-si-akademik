@@ -14,7 +14,7 @@
             <div class="card-body">
                 <h1 class="h3 mb-4">Edit Dosen</h1>
                 <?php if ($dosen): ?>
-                    <form method="post" action="/si-akademik/public/dosen/update">
+                    <form method="post" action="/wildan-si-akademik/public/dosen/update">
                         <input type="hidden" name="id" value="<?= htmlspecialchars($dosen['id']); ?>">
                         <div class="mb-3">
                             <label for="nidn" class="form-label">NIDN</label>
@@ -29,11 +29,11 @@
                             <input type="text" id="bidang_keahlian" name="bidang_keahlian" class="form-control" value="<?= htmlspecialchars($dosen['bidang_keahlian']); ?>" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-                        <a href="/si-akademik/public/dosen" class="btn btn-secondary">Batal</a>
+                        <a href="/wildan-si-akademik/public/dosen" class="btn btn-secondary">Batal</a>
                     </form>
                 <?php else: ?>
                     <div class="alert alert-warning">Data dosen tidak ditemukan.</div>
-                    <a href="/si-akademik/public/dosen" class="btn btn-secondary">Kembali</a>
+                    <a href="/wildan-si-akademik/public/dosen" class="btn btn-secondary">Kembali</a>
                 <?php endif; ?>
             </div>
         </div>

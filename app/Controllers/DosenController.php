@@ -30,7 +30,7 @@ class DosenController
  'nama' => $_POST['nama'],
  'bidang_keahlian' => $_POST['bidang_keahlian']
  ]);
- header('Location: /si-akademik/public/dosen');
+ header('Location: /wildan-si-akademik/public/dosen');
  exit;
  }
  public function edit()
@@ -51,7 +51,7 @@ class DosenController
  'nama' => $_POST['nama'],
  'bidang_keahlian' => $_POST['bidang_keahlian']
  ]);
- header('Location: /si-akademik/public/dosen');
+ header('Location: /wildan-si-akademik/public/dosen');
  exit;
  }
  public function delete($id)
@@ -59,7 +59,7 @@ class DosenController
  global $pdo;
  $model = new Dosen($pdo);
  $model->delete($id);
- header('Location: /si-akademik/public/dosen');
+ header('Location: /wildan-si-akademik/public/dosen');
  exit;
  }
 }
