@@ -20,7 +20,10 @@
 	<div class="container">
 		<div class="card shadow-sm">
 			<div class="card-body">
-				<h2 class="card-title">Data Dosen</h2>
+				<div class="d-flex justify-content-between align-items-center mb-2">
+					<h2 class="card-title mb-0">Data Dosen</h2>
+					<a href="?url=dosen/create" class="btn btn-primary">Tambah Dosen</a>
+				</div>
 				<h6 class="card-subtitle mb-4 text-muted">Politeknik Negeri Jember</h6>
 
 				<div class="table-responsive">
@@ -36,11 +39,13 @@
 						<tbody>
 							<?php foreach ($dosen as $item): ?>
 								<tr>
-									<td><?= htmlspecialchars($item['nidn']); ?></td>
-									<td><?= htmlspecialchars($item['nama']); ?></td>
-									<td><?= htmlspecialchars($item['bidang_keahlian']); ?></td>
+									<td><?= htmlspecialchars($item['nidn'], ENT_QUOTES, 'UTF-8'); ?></td>
+									<td><?= htmlspecialchars($item['nama'], ENT_QUOTES, 'UTF-8'); ?></td>
+									<td><?= htmlspecialchars($item['bidang_keahlian'], ENT_QUOTES, 'UTF-8'); ?></td>
 									<td class="text-center">
 										<a href="?url=dosen/detail&nidn=<?= urlencode($item['nidn']); ?>" class="btn btn-sm btn-outline-primary">Detail</a>
+										<a href="?url=dosen/edit&id=<?= urlencode($item['id']); ?>" class="btn btn-sm btn-outline-warning">Edit</a>
+										<a href="?url=dosen/delete&id=<?= urlencode($item['id']); ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Hapus data dosen ini?');">Hapus</a>
 									</td>
 								</tr>
 							<?php endforeach; ?>

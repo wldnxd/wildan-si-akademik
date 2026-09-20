@@ -33,6 +33,21 @@ if ($url == 'login') {
 } elseif ($url == 'dosen') {
     $middleware->handle();
     $dosenController->index();
+} elseif ($url == 'dosen/create') {
+    $middleware->handle();
+    $dosenController->create();
+} elseif ($url == 'dosen/store' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    $middleware->handle();
+    $dosenController->store();
+} elseif ($url == 'dosen/edit' && isset($_GET['id'])) {
+    $middleware->handle();
+    $dosenController->edit();
+} elseif ($url == 'dosen/update' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    $middleware->handle();
+    $dosenController->update();
+} elseif ($url == 'dosen/delete' && isset($_GET['id'])) {
+    $middleware->handle();
+    $dosenController->delete($_GET['id']);
 } elseif ($url == 'dosen/detail') {
     $middleware->handle();
     $dosenController->detail();
